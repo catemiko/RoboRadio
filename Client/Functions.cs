@@ -13,6 +13,7 @@ namespace RoboRadio
             if (String_1.Text != "" && String_2.Text != "")
             {
               Button.Enabled = true;
+
             }
         }
 
