@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Client
+namespace RoboRadio
 {
     static class Program
     {
+        public static MainWindow MainWindowVirtual;
+
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
@@ -16,7 +15,12 @@ namespace Client
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+
+            MainWindowVirtual = new MainWindow();
+
+            Functions.CheckStartExceptions();
+
+            Application.Run(MainWindowVirtual);            
         }
     }
 }

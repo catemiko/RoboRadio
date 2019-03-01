@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stations>
+  <station name="Awesome 80's">
+    <link>http://113fm.cdnstream1.com/1719_128?cb=61816.mp3</link>
+  </station>
+  <station name="Nirvana Ambient Radio">
+    <link>http://radio.108.pl:8006/ambient.ogg</link>
+  </station>
+  <station name="Tangra Mega Rock">
+    <link>http://stream-bg-01.radiotangra.com:8000/Tangra.ogg</link>
+  </station>
+  <station name="Punkrockers Radio">
+    <link>http://stream.punkrockers-radio.de:8000/ogg</link>
+  </station>
+  <station name="Ninth Wave Radio">
+    <link>http://alxq.org:8000/9th_wave.ogg</link>
+  </station>
+  <station name="Radio Gibson Music">
+    <link>http://ascolta.radiogibson.net:8888/radiogibson.opus</link>
+  </station>
+  <station name="Dance">
+    <link>http://stream.nonstopplay.co.uk/nsp-128k-mp3</link>
+  </station>
+  <station name="Rock">
+    <link>http://113fm.cdnstream1.com/1740_128?cb=73531.mp3</link>
+  </station>
+  <station name="Country">
+    <link>http://113fm.cdnstream1.com/1715_128?cb=83302.mp3</link>
+  </station>
+  <station name="Electro Music">
+    <link>http://113fm.cdnstream1.com/1774_128?cb=84031.mp3</link>
+  </station>
+  <station name="2018 Hits">
+    <link>http://113fm.cdnstream1.com/1856_128?cb=455676.mp3</link>
+  </station>
+</stations>
