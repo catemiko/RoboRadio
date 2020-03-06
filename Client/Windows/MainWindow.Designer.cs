@@ -65,9 +65,13 @@ namespace RoboRadio
             this.ExitTray = new System.Windows.Forms.ToolStripMenuItem();
             this.RPCUpdateTimer = new System.Windows.Forms.Timer(this.components);
             this.UpdateTimer = new System.Windows.Forms.Timer(this.components);
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.VolumeBar)).BeginInit();
             this.Menu.SuspendLayout();
             this.TrayMenu.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // VolumeBar
@@ -88,13 +92,13 @@ namespace RoboRadio
             // 
             // RadioStation
             // 
+            resources.ApplyResources(this.RadioStation, "RadioStation");
             this.RadioStation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RadioStation.FormattingEnabled = true;
-            resources.ApplyResources(this.RadioStation, "RadioStation");
             this.RadioStation.Name = "RadioStation";
             this.RadioStation.TabStop = false;
             this.RadioStation.SelectedIndexChanged += new System.EventHandler(this.RadioStation_SelectedIndexChanged);
-            this.RadioStation.MouseWheel += new MouseEventHandler(RadioStation_MouseWheel);
+            this.RadioStation.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.RadioStation_MouseWheel);
             // 
             // PlayButton
             // 
@@ -152,6 +156,7 @@ namespace RoboRadio
             // 
             // Menu
             // 
+            this.Menu.ImageScalingSize = new System.Drawing.Size(32, 32);
             resources.ApplyResources(this.Menu, "Menu");
             this.Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Stations,
@@ -252,6 +257,7 @@ namespace RoboRadio
             // 
             // TrayMenu
             // 
+            this.TrayMenu.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.TrayMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ShazamTray,
             this.VisTray,
@@ -287,27 +293,37 @@ namespace RoboRadio
             this.UpdateTimer.Interval = 1000;
             this.UpdateTimer.Tick += new System.EventHandler(this.UpdateTimer_Tick);
             // 
+            // tableLayoutPanel1
+            // 
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.VolumeBox, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.VolumeBar, 0, 1);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
+            // tableLayoutPanel2
+            // 
+            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+            this.tableLayoutPanel2.Controls.Add(this.ShazamProgress, 0, 6);
+            this.tableLayoutPanel2.Controls.Add(this.StartShazam, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.ArtistBox, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.Artist, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.TitleBox, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.RadioStation, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.PlayButton, 0, 7);
+            this.tableLayoutPanel2.Controls.Add(this.Title, 0, 1);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.ShazamProgress);
-            this.Controls.Add(this.StartShazam);
-            this.Controls.Add(this.ArtistBox);
-            this.Controls.Add(this.TitleBox);
-            this.Controls.Add(this.Artist);
-            this.Controls.Add(this.Title);
-            this.Controls.Add(this.VolumeBox);
-            this.Controls.Add(this.RadioStation);
-            this.Controls.Add(this.VolumeBar);
-            this.Controls.Add(this.PlayButton);
+            this.Controls.Add(this.tableLayoutPanel2);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.Menu);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
             this.MainMenuStrip = this.Menu;
-            this.MaximizeBox = false;
             this.Name = "MainWindow";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.Load += new System.EventHandler(this.MainWindow_Load);
@@ -317,6 +333,10 @@ namespace RoboRadio
             this.Menu.ResumeLayout(false);
             this.Menu.PerformLayout();
             this.TrayMenu.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,5 +377,7 @@ namespace RoboRadio
         public System.Windows.Forms.ToolStripMenuItem DeleteFilter;
         public System.Windows.Forms.ToolStripMenuItem Stations;
         public System.Windows.Forms.ToolStripMenuItem Filters;
+        private TableLayoutPanel tableLayoutPanel1;
+        private TableLayoutPanel tableLayoutPanel2;
     }
 }
